@@ -8,9 +8,9 @@ public class Main {
         int j =0;
 
         for (int i = 1; i < 100; i+= 2) {
-            System.out.print("Odd number: " + i +", ");
+            System.out.println("Odd number: " + i +", ");
             j = j+i;
-            System.out.print("Sum is: " + j + "\n");
+            System.out.println("Sum is: " + j + "\n");
         }
     }
 }
