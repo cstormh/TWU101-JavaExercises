@@ -1,6 +1,7 @@
 package com.thoughtworks.tw101.exercises.exercise4;
 
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 public class Library {
     private String[] books;
@@ -12,5 +13,13 @@ public class Library {
     }
 
     public void printBooksContaining(String partialBookTitle) {
+        ArrayList<String> booksContainTitle  = new ArrayList<>();
+
+        for (String s:books) {
+            if (s.contains(partialBookTitle))
+                booksContainTitle.add(s);
+        }
+
+        System.out.println(booksContainTitle);
     }
 }
