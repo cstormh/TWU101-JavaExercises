@@ -4,12 +4,12 @@ public class Accumulator {
 
     static int count = 0;
 
-    int increment() {
+    public void increment() {
+        System.out.println("Add one more");
         count++;
-        return count;
      }
 
-    void total() {
+    public void total() {
          System.out.println("Total is: " + count);
     }
 }
