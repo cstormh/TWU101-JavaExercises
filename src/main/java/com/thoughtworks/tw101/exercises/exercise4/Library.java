@@ -2,6 +2,7 @@ package com.thoughtworks.tw101.exercises.exercise4;
 
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Library {
     private String[] books;
@@ -15,11 +16,11 @@ public class Library {
     public void printBooksContaining(String partialBookTitle) {
         ArrayList<String> booksContainTitle  = new ArrayList<>();
 
-        for (String s:books) {
-            if (s.contains(partialBookTitle))
-                booksContainTitle.add(s);
+        for (String book:books) {
+            if (book.contains(partialBookTitle))
+                booksContainTitle.add(book);
         }
 
-        System.out.println(booksContainTitle);
+        printStream.println(booksContainTitle);
     }
 }
