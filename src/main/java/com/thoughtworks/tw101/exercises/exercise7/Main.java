@@ -8,5 +8,16 @@ public class Main {
 
     public static void main(String[] args) {
 
+        RandomNumber randomNumber = new RandomNumber();
+        int randInt1 = randomNumber.getRandomInteger();
+
+        do {
+
+            UserGuess userGuess = new UserGuess();
+            int userGuess1 = userGuess.getUserGuess();
+
+            userGuess.checkGuess(userGuess1,randInt1);
+        }
+        while (UserGuess.guessCorrect == 0);
     }
 }
