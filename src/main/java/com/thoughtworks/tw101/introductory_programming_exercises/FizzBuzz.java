@@ -29,19 +29,19 @@ package com.thoughtworks.tw101.introductory_programming_exercises;
 public class FizzBuzz {
     public static void main(String[] args) {
 
-        fizzBuzz();
+        fizzBuzz(3,5);
     }
 
-    private static void fizzBuzz() {
+    private static void fizzBuzz(int a, int b) {
 
         for (int i = 1; i <= 100; i++) {
-            if (i % 15 == 0) {
+            if (i % (a*b) == 0) {
                 System.out.println("FizzBuzz");
             }
-            else if (i % 3 == 0) {
+            else if (i % a == 0) {
                 System.out.println("Fizz");
             }
-            else if (i % 5 == 0) {
+            else if (i % b == 0) {
                 System.out.println("Buzz");
             }
             else {
