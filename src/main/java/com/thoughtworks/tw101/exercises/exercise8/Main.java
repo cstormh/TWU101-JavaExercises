@@ -10,6 +10,10 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
+            // make guessCorrect false
+
+            boolean guessCorrect = false;
+
             // Get random number for the game
             RandomNumber randomNumber = new RandomNumber();
             int randInt1 = randomNumber.getRandomInteger();
@@ -18,18 +22,17 @@ public class Main {
             ArrayList<Integer> userGuessArrayList = new ArrayList<>();
 
             // Ask for and check user guesses against random number
-            do {
+            while(guessCorrect != true) {
 
                 try {
                     int userGuess1 = userGuess.getUserGuess();
                     userGuessArrayList.add(userGuess1);
-                    userGuess.checkGuess(userGuess1,randInt1);
+                    guessCorrect = userGuess.checkGuess(userGuess1, randInt1);
                 }
                 catch (NumberFormatException e) {
                     System.out.println("Please enter a valid integer to play the game!");
                 }
             }
-            while (UserGuess.guessCorrect == 0);
 
             // Print all user guesses after they guess correctly
             System.out.println("Here is the list of all your guesses in the game:");

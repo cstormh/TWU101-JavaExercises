@@ -8,16 +8,18 @@ public class Main {
 
     public static void main(String[] args) {
 
+        boolean guessCorrect = false;
+
         RandomNumber randomNumber = new RandomNumber();
         int randInt1 = randomNumber.getRandomInteger();
 
-        do {
+
+        while (guessCorrect != true) {
 
             UserGuess userGuess = new UserGuess();
             int userGuess1 = userGuess.getUserGuess();
 
-            userGuess.checkGuess(userGuess1,randInt1);
+            guessCorrect = userGuess.checkGuess(userGuess1, randInt1);
         }
-        while (UserGuess.guessCorrect == 0);
     }
 }

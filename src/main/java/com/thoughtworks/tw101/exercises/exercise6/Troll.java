@@ -13,10 +13,12 @@ public class Troll implements Monster {
 
         System.out.println("Doing damage " + damage + " to monster.");
 
-        if (damage <= hitpoint)
+        if (damage <= hitpoint) {
             hitpoint = hitpoint - damage;
-        else
+        }
+        else {
             hitpoint = 0;
+        }
     }
 
     @Override
