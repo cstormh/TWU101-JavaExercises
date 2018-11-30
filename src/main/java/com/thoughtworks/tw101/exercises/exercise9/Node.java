@@ -1,5 +1,6 @@
 package com.thoughtworks.tw101.exercises.exercise9;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Node {
@@ -18,9 +19,9 @@ public class Node {
 
     public void getName() {
         System.out.println(name);
-        System.out.println("left: " +left);
-        System.out.println("right " +right);
-        System.out.println("root " +root);
+        System.out.println("left: " + left);
+        System.out.println("right " + right);
+        System.out.println("root " + root);
     }
 
 //    public boolean lookup(String name) {
@@ -44,40 +45,34 @@ public class Node {
 //    }
 
     public void add(String nameOfNewNode) {
-         root = add(this, nameOfNewNode);
+        root = add(this, nameOfNewNode);
     }
 
     private Node add(Node node, String nameOfNewNode) {
-        if (node==null) {
+        if (node == null) {
             node = new Node(nameOfNewNode);
-        }
-        else {
+        } else {
             if (node.name.compareTo(nameOfNewNode) < 0) {
                 node.left = add(node.left, nameOfNewNode);
-            }
-            else {
+            } else {
                 node.right = add(node.right, nameOfNewNode);
             }
         }
-        return(node);
+        return (node);
     }
 
-    public void printTree() {
-        printTree(this);
-        System.out.println();
-    }
-
-    private void printTree(Node node) {
+    private void printTree(ArrayList<String> names, Node node) {
         if (node == null) return;
 
-        printTree(node.right);
-        System.out.print(node.name + " ");
-        printTree(node.left);
+        printTree(names, node.right);
+        names.add(node.name);
+        printTree(names, node.left);
     }
 
 
     public List<String> names() {
-
-        return null;
+        ArrayList<String> names = new ArrayList<>();
+        printTree(names, this);
+        return names;
     }
 }
