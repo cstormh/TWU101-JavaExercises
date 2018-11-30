@@ -17,6 +17,7 @@ public class Main {
         root.add("Sue-Ellen");
         root.add("Sara");
         root.add("Casey");
+        root.printTree();
 
         List<String> names = root.names();
 
